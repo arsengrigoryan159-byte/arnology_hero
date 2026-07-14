@@ -37,14 +37,14 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.65));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.05;
-renderer.shadowMap.enabled = true;
+renderer.toneMappingExposure = 0.94;
+renderer.shadowMap.enabled = false;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.setClearColor(0x08090c, 1);
+renderer.setClearColor(0x000000, 1);
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x08090c);
-scene.fog = new THREE.FogExp2(0x08090c, 0.038);
+scene.background = new THREE.Color(0x000000);
+scene.fog = new THREE.FogExp2(0x000000, 0.026);
 
 const camera = new THREE.PerspectiveCamera(32, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.set(0.1, 0.15, 12.4);
@@ -57,11 +57,11 @@ pmrem.dispose();
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.22, 0.45, 0.88);
+const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.28, 0.52, 0.84);
 composer.addPass(bloom);
 
-scene.add(new THREE.HemisphereLight(0xc7cad2, 0x101116, 1.05));
-const key = new THREE.DirectionalLight(0xf5f3ed, 4.1);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x000000, 0.72));
+const key = new THREE.DirectionalLight(0xffffff, 3.4);
 key.position.set(4, 6, 7);
 key.castShadow = true;
 key.shadow.mapSize.set(2048, 2048);
@@ -70,26 +70,142 @@ key.shadow.camera.right = 8;
 key.shadow.camera.top = 8;
 key.shadow.camera.bottom = -8;
 scene.add(key);
-const fill = new THREE.PointLight(0x8490b8, 18, 18, 2);
+const fill = new THREE.PointLight(0x343755, 14, 20, 2);
 fill.position.set(-5, 2.5, 5);
 scene.add(fill);
-const edge = new THREE.PointLight(0xcdd1df, 14, 16, 2);
+const edge = new THREE.PointLight(0xe7e7e7, 10, 18, 2);
 edge.position.set(5, -2.5, 3.5);
 scene.add(edge);
-const pointerLight = new THREE.PointLight(0x9fa7c4, 8, 12, 2);
+const pointerLight = new THREE.PointLight(0x5f6389, 7, 14, 2);
 pointerLight.position.set(2, 2, 6);
 scene.add(pointerLight);
 
 const world = new THREE.Group();
-world.position.set(2.25, 0.15, 0);
-world.rotation.set(-0.1, -0.28, 0.03);
+world.position.set(0.75, 0.08, 0);
+world.rotation.set(-0.04, -0.12, 0.01);
 scene.add(world);
 
 const product = new THREE.Group();
 world.add(product);
 
+
+// Active-Theory-inspired portal: the product core becomes an untethered
+// rendered world, while UI chrome remains nearly invisible.
+const portal = new THREE.Group();
+world.add(portal);
+
+const portalMetal = new THREE.MeshPhysicalMaterial({
+  color: 0x8a8a91,
+  metalness: 0.96,
+  roughness: 0.15,
+  clearcoat: 0.84,
+  clearcoatRoughness: 0.11,
+  envMapIntensity: 1.15
+});
+const portalDark = new THREE.MeshPhysicalMaterial({
+  color: 0x070708,
+  metalness: 0.91,
+  roughness: 0.2,
+  clearcoat: 0.7,
+  clearcoatRoughness: 0.14
+});
+const portalViolet = new THREE.MeshBasicMaterial({
+  color: 0x343755,
+  transparent: true,
+  opacity: 0.72,
+  toneMapped: false,
+  blending: THREE.AdditiveBlending,
+  depthWrite: false
+});
+
+const portalRings = [];
+[
+  { radius: 3.15, tube: .032, material: portalMetal },
+  { radius: 3.43, tube: .018, material: portalViolet },
+  { radius: 3.68, tube: .027, material: portalDark }
+].forEach((spec, index) => {
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(spec.radius, spec.tube, 18, 280), spec.material);
+  ring.rotation.z = index * .42;
+  ring.position.z = -.72 - index * .11;
+  portal.add(ring);
+  portalRings.push(ring);
+});
+
+const portalArcs = [];
+[
+  { radius: 3.28, arc: Math.PI * .72, rotation: -.4 },
+  { radius: 3.56, arc: Math.PI * .52, rotation: 1.82 },
+  { radius: 3.83, arc: Math.PI * .34, rotation: 3.58 }
+].forEach((spec, index) => {
+  const arc = new THREE.Mesh(
+    new THREE.TorusGeometry(spec.radius, .045 - index * .008, 14, 180, spec.arc),
+    index === 1 ? portalViolet.clone() : portalMetal.clone()
+  );
+  arc.rotation.z = spec.rotation;
+  arc.position.z = -.48 + index * .08;
+  portal.add(arc);
+  portalArcs.push(arc);
+});
+
+function makeSoftGlowTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 512;
+  const ctx = c.getContext('2d');
+  const gradient = ctx.createRadialGradient(256, 256, 8, 256, 256, 250);
+  gradient.addColorStop(0, 'rgba(90,94,145,.48)');
+  gradient.addColorStop(.26, 'rgba(52,55,85,.20)');
+  gradient.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 512, 512);
+  const texture = new THREE.CanvasTexture(c);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+const portalGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+  map: makeSoftGlowTexture(), transparent: true, opacity: .72,
+  blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false
+}));
+portalGlow.scale.set(10.5, 10.5, 1);
+portalGlow.position.z = -1.35;
+portal.add(portalGlow);
+
+const starCount = 1050;
+const starPositions = new Float32Array(starCount * 3);
+for (let i = 0; i < starCount; i++) {
+  const radius = 4.1 + Math.pow(Math.random(), .7) * 13;
+  const angle = Math.random() * Math.PI * 2;
+  const vertical = (Math.random() - .5) * 10;
+  starPositions[i * 3] = Math.cos(angle) * radius;
+  starPositions[i * 3 + 1] = vertical;
+  starPositions[i * 3 + 2] = -2.2 - Math.random() * 9;
+}
+const starsGeometry = new THREE.BufferGeometry();
+starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+const stars = new THREE.Points(starsGeometry, new THREE.PointsMaterial({
+  color: 0xc6c6c6, size: .022, transparent: true, opacity: .42,
+  sizeAttenuation: true, depthWrite: false
+}));
+scene.add(stars);
+
+const sparkCount = 360;
+const sparkPositions = new Float32Array(sparkCount * 3);
+for (let i = 0; i < sparkCount; i++) {
+  const angle = Math.random() * Math.PI * 2;
+  const radius = 2.7 + Math.random() * 1.6;
+  sparkPositions[i * 3] = Math.cos(angle) * radius;
+  sparkPositions[i * 3 + 1] = Math.sin(angle) * radius * .95;
+  sparkPositions[i * 3 + 2] = -.25 + (Math.random() - .5) * .55;
+}
+const sparksGeometry = new THREE.BufferGeometry();
+sparksGeometry.setAttribute('position', new THREE.BufferAttribute(sparkPositions, 3));
+const sparks = new THREE.Points(sparksGeometry, new THREE.PointsMaterial({
+  color: 0x777a9f, size: .035, transparent: true, opacity: .52,
+  blending: THREE.AdditiveBlending, sizeAttenuation: true, depthWrite: false
+}));
+portal.add(sparks);
+
 const aluminium = new THREE.MeshPhysicalMaterial({
-  color: 0x8d9097,
+  color: 0xa5a5a8,
   metalness: 0.95,
   roughness: 0.19,
   clearcoat: 0.75,
@@ -97,7 +213,7 @@ const aluminium = new THREE.MeshPhysicalMaterial({
   envMapIntensity: 1.25
 });
 const darkAluminium = new THREE.MeshPhysicalMaterial({
-  color: 0x15171c,
+  color: 0x09090b,
   metalness: 0.88,
   roughness: 0.22,
   clearcoat: 0.7,
@@ -105,23 +221,23 @@ const darkAluminium = new THREE.MeshPhysicalMaterial({
   envMapIntensity: 1.15
 });
 const ceramic = new THREE.MeshPhysicalMaterial({
-  color: 0xf1f0eb,
+  color: 0xf4f4f0,
   metalness: 0.08,
   roughness: 0.21,
   clearcoat: 0.88,
   clearcoatRoughness: 0.11
 });
 const brandMetal = new THREE.MeshPhysicalMaterial({
-  color: 0x737d9f,
+  color: 0x343755,
   metalness: 0.74,
   roughness: 0.2,
   clearcoat: 0.95,
   clearcoatRoughness: 0.1,
-  emissive: 0x151a29,
+  emissive: 0x0b0c16,
   emissiveIntensity: 0.22
 });
 const silicon = new THREE.MeshPhysicalMaterial({
-  color: 0x0e1118,
+  color: 0x050507,
   metalness: 0.62,
   roughness: 0.16,
   clearcoat: 1,
@@ -129,7 +245,7 @@ const silicon = new THREE.MeshPhysicalMaterial({
   envMapIntensity: 1.2
 });
 const glass = new THREE.MeshPhysicalMaterial({
-  color: 0x8b94ac,
+  color: 0x343755,
   metalness: 0,
   roughness: 0.05,
   transmission: 0.72,
@@ -141,8 +257,8 @@ const glass = new THREE.MeshPhysicalMaterial({
   ior: 1.42,
   envMapIntensity: 1.15
 });
-const glow = new THREE.MeshBasicMaterial({ color: 0x9fa8c5, transparent: true, opacity: 0.5, toneMapped: false });
-const lineMaterial = new THREE.MeshBasicMaterial({ color: 0x8993b2, transparent: true, opacity: 0.34, toneMapped: false });
+const glow = new THREE.MeshBasicMaterial({ color: 0x777a9f, transparent: true, opacity: 0.44, toneMapped: false });
+const lineMaterial = new THREE.MeshBasicMaterial({ color: 0x777a9f, transparent: true, opacity: 0.28, toneMapped: false });
 
 // The central object is a physical "product core": a glass idea chamber,
 // machined frame, silicon layers, and modular expansion cartridges.
@@ -262,7 +378,7 @@ function labelTexture(text) {
   ctx.font = '600 28px Arial';
   ctx.letterSpacing = '5px';
   ctx.fillText(text, 40, 92);
-  ctx.fillStyle = '#8992ad';
+  ctx.fillStyle = '#343755';
   ctx.fillRect(40, 116, 120, 3);
   const texture = new THREE.CanvasTexture(c);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -315,7 +431,7 @@ for (let i = 0; i < 7; i++) {
   const layer = new THREE.Mesh(
     new RoundedBoxGeometry(3.02 - i*.14, 1.95 - i*.1, .045, 6, .1),
     new THREE.MeshPhysicalMaterial({
-      color: i%2 ? 0x222630 : 0x707993,
+      color: i%2 ? 0x0d0d12 : 0x343755,
       metalness: i%2 ? .72 : .52,
       roughness: .2,
       transparent: true,
@@ -330,26 +446,9 @@ for (let i = 0; i < 7; i++) {
   layers.push(layer);
 }
 
-const floor = new THREE.Mesh(
-  new THREE.PlaneGeometry(35, 22),
-  new THREE.ShadowMaterial({ color: 0x000000, opacity: .34 })
-);
-floor.rotation.x = -Math.PI/2;
-floor.position.y = -3.38;
-floor.receiveShadow = true;
-scene.add(floor);
-
-const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(2.8, 3.1, .22, 100), darkAluminium);
-pedestal.position.set(0, -3.23, -.5);
-pedestal.scale.y = .28;
-pedestal.receiveShadow = true;
-pedestal.castShadow = true;
-world.add(pedestal);
-const pedestalRing = new THREE.Mesh(new THREE.TorusGeometry(2.55,.012,5,180), glow.clone());
-pedestalRing.position.set(0,-3.12,-.5);
-pedestalRing.rotation.x = Math.PI/2;
-pedestalRing.material.opacity = .16;
-world.add(pedestalRing);
+// No pedestal or projected shadows: the product floats in an absolute black void.
+// Depth comes from transmission, reflective materials, particles, and layered rings.
+const pedestalRing = portalRings[1];
 
 const pointer = new THREE.Vector2();
 const pointerTarget = new THREE.Vector2();
@@ -399,19 +498,19 @@ document.addEventListener('visibilitychange', () => { pageVisible = !document.hi
 function responsiveLayout() {
   const w = window.innerWidth;
   if (w < 560) {
-    world.position.set(.05, 2.08, -1.6);
-    world.scale.setScalar(.57);
-    camera.fov = 42;
+    world.position.set(.08, 1.62, -1.45);
+    world.scale.setScalar(.54);
+    camera.fov = 44;
   } else if (w < 820) {
-    world.position.set(.65, 1.72, -1.1);
-    world.scale.setScalar(.68);
-    camera.fov = 39;
+    world.position.set(.18, 1.32, -1.0);
+    world.scale.setScalar(.66);
+    camera.fov = 40;
   } else if (w < 1150) {
-    world.position.set(2.15, .32, -.4);
+    world.position.set(.72, .2, -.45);
     world.scale.setScalar(.82);
     camera.fov = 35;
   } else {
-    world.position.set(2.35, .12, 0);
+    world.position.set(.78, .06, 0);
     world.scale.setScalar(1);
     camera.fov = 32;
   }
@@ -504,30 +603,49 @@ function animate() {
   });
 
   // Product-shot camera movement and full-width scroll choreography.
-  product.rotation.x = mix(.28, -.06, architecture) + (reducedMotion ? 0 : pointer.y*.055);
-  product.rotation.y = mix(-.72, .32, engineering) + mix(0, .36, scale) + (reducedMotion ? 0 : pointer.x*.09);
-  product.rotation.z = mix(-.14, .015, reveal);
-  product.position.y = Math.sin(time*.45)*.035;
-  product.scale.setScalar(mix(.82, 1.06, scale));
+  product.rotation.x = mix(.16, -.035, architecture) + (reducedMotion ? 0 : pointer.y*.035);
+  product.rotation.y = mix(-.46, .2, engineering) + mix(0, .24, scale) + (reducedMotion ? 0 : pointer.x*.065);
+  product.rotation.z = mix(-.08, .008, reveal);
+  product.position.y = Math.sin(time*.34)*.026;
+  product.scale.setScalar(mix(.78, 1.02, scale));
 
   const desktop = window.innerWidth >= 820;
-  const baseX = desktop ? mix(2.35, 1.2, scale) : world.position.x;
-  if (desktop) world.position.x += (baseX - world.position.x) * .04;
-  world.rotation.y += ((-.28 + (reducedMotion ? 0 : pointer.x*.1)) - world.rotation.y) * .035;
-  world.rotation.x += ((-.1 + (reducedMotion ? 0 : pointer.y*.06)) - world.rotation.x) * .035;
+  const baseX = desktop ? mix(.82, .28, scale) : world.position.x;
+  if (desktop) world.position.x += (baseX - world.position.x) * .035;
+  world.rotation.y += ((-.12 + (reducedMotion ? 0 : pointer.x*.075)) - world.rotation.y) * .03;
+  world.rotation.x += ((-.04 + (reducedMotion ? 0 : pointer.y*.045)) - world.rotation.x) * .03;
 
-  const cameraZ = mix(12.4, 10.65, scale);
-  camera.position.z += (cameraZ - camera.position.z) * .035;
-  camera.position.x += (((reducedMotion ? 0 : pointer.x*.22) + mix(0,.65,scale)) - camera.position.x) * .025;
-  camera.position.y += (((reducedMotion ? .15 : .15 + pointer.y*.12) + mix(0,-.08,scale)) - camera.position.y) * .025;
-  camera.lookAt(mix(.55, 1.1, scale), .05, -.1);
+  // The portal has slow gravitational cadence; it never snaps or spins sharply.
+  portal.rotation.z = time * .018 + scrollProgress * .28;
+  portal.rotation.x = Math.sin(time * .17) * .018 + (reducedMotion ? 0 : pointer.y * .02);
+  portal.rotation.y = Math.cos(time * .15) * .025 + (reducedMotion ? 0 : pointer.x * .025);
+  portalRings.forEach((ring, i) => {
+    ring.rotation.z += dt * (i % 2 ? -.018 : .012) * (1 + scale * .65);
+  });
+  portalArcs.forEach((arc, i) => {
+    arc.rotation.z += dt * (i % 2 ? -.045 : .032);
+    arc.material.opacity = mix(.22, i === 1 ? .74 : .48, reveal) * (1 - scale * .08);
+  });
+  portalGlow.material.opacity = mix(.34, .78, reveal) + Math.sin(time * .42) * .035;
+  sparks.rotation.z = -time * .026;
+  sparks.material.opacity = mix(.22, .58, reveal) + engineering * .08;
+  stars.rotation.y = time * .004;
+  stars.rotation.z = -time * .0025;
 
-  pointerLight.position.x += ((pointer.x*5.5 + 1.2) - pointerLight.position.x) * .05;
-  pointerLight.position.y += ((pointer.y*3.8 + 1) - pointerLight.position.y) * .05;
-  pedestalRing.material.opacity = .09 + engineering*.1;
-  pedestalRing.rotation.z += dt*.015;
+  const cameraZ = mix(12.8, 10.9, scale);
+  camera.position.z += (cameraZ - camera.position.z) * .03;
+  camera.position.x += (((reducedMotion ? 0 : pointer.x*.17) + mix(0,.22,scale)) - camera.position.x) * .022;
+  camera.position.y += (((reducedMotion ? .1 : .1 + pointer.y*.09) + mix(0,-.05,scale)) - camera.position.y) * .022;
+  camera.lookAt(mix(.2, .45, scale), .02, -.25);
+
+  pointerLight.position.x += ((pointer.x*4.3 + .8) - pointerLight.position.x) * .045;
+  pointerLight.position.y += ((pointer.y*3.2 + .8) - pointerLight.position.y) * .045;
+  pedestalRing.material.opacity = .42 + engineering*.18;
 
   composer.render();
+  if (!document.body.classList.contains('is-ready')) {
+    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('is-ready')));
+  }
 }
 updateCopy(0);
 animate();

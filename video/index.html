@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" class="is-loading">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050608" />
+  <meta name="description" content="Arnology cinematic hero concept — ideas engineered into dependable software." />
+  <link rel="preload" href="./assets/arnology-desk-motion.mp4" as="video" type="video/mp4" />
+  <link rel="preload" href="./assets/arnology-desk-poster.jpg" as="image" />
+  <title>Arnology — Cinematic Workspace</title>
+  <style>
+    html,body{margin:0;background:#050608;color:#f5f7fb}html.is-loading body{overflow:hidden}
+    #loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#050608;transition:opacity .55s ease,visibility .55s ease}
+    #loader::before{content:"ARN";font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.34em;color:rgba(255,255,255,.74);position:absolute;transform:translateY(-34px)}
+    #loader::after{content:"";width:124px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.92),transparent);animation:loadline 1.35s ease-in-out infinite}
+    html.is-ready #loader{opacity:0;visibility:hidden}
+    @keyframes loadline{0%,100%{transform:scaleX(.15);opacity:.3}50%{transform:scaleX(1);opacity:1}}
+  </style>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="loader" aria-hidden="true"></div>
+
+  <main class="page-shell">
+    <section class="hero" id="hero" aria-label="Arnology cinematic workspace hero">
+      <div class="media-layer" aria-hidden="true">
+        <video id="heroVideo" class="hero-video" muted autoplay playsinline preload="auto" poster="./assets/arnology-desk-poster.jpg">
+          <source src="./assets/arnology-desk-motion.mp4" type="video/mp4" />
+        </video>
+        <div class="video-grade"></div>
+        <div class="pointer-light"></div>
+        <div class="video-vignette"></div>
+        <div class="film-grain"></div>
+      </div>
+
+      <header class="topbar shell">
+        <a class="brand" href="#hero" aria-label="Arnology home">
+          <svg class="brand-symbol" viewBox="0 0 38 34" aria-hidden="true">
+            <path d="M4 29 17.2 4.8c.7-1.3 2.6-1.3 3.3 0L34 29h-7.1l-2.6-5.1H13.1L10.5 29H4Zm11.8-10.2h5.8l-2.9-5.7-2.9 5.7Z"/>
+            <path class="brand-accent" d="m23.8 9.8 8.5 15.4h-6.8L20.4 16l3.4-6.2Z"/>
+          </svg>
+          <span>Arnology</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#capabilities">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#contact">Get an estimate <span>↗</span></a>
+        </nav>
+
+        <button class="menu-button" type="button" aria-label="Open menu"><span></span><span></span></button>
+      </header>
+
+      <div class="hero-index" aria-hidden="true"><span>01</span><i></i><strong>Workspace / Assembly</strong></div>
+
+      <div class="hero-content" id="heroContent">
+        <p class="eyebrow">Thinkable is the new possible</p>
+        <h1>Ideas, engineered<br />into something <em>real.</em></h1>
+        <p class="intro">We bring product thinking, software engineering, and the right people together to turn ambitious ideas into dependable digital products.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Start your project <span>↗</span></a>
+          <a class="button button-secondary" href="#capabilities">Explore capabilities <span>→</span></a>
+        </div>
+      </div>
+
+      <aside class="scene-note" aria-hidden="true">
+        <span class="scene-note-index">A / 01</span>
+        <div>
+          <strong>Built around the way you work.</strong>
+          <p>Strategy, people, and technology assembled into one focused delivery system.</p>
+        </div>
+      </aside>
+
+      <div class="hero-rail" id="capabilities">
+        <a href="#approach"><span>01</span><strong>Product discovery</strong><small>Shape the right thing</small></a>
+        <a href="#approach"><span>02</span><strong>Custom software</strong><small>Build it with precision</small></a>
+        <a href="#approach"><span>03</span><strong>Team augmentation</strong><small>Add the right expertise</small></a>
+        <a href="#approach"><span>04</span><strong>Transformation</strong><small>Scale beyond launch</small></a>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true"><span></span><small>Scroll to continue</small></div>
+    </section>
+
+    <section class="approach-section" id="approach">
+      <div class="shell approach-head">
+        <p class="section-label"><span>02</span> One connected process</p>
+        <h2>From first thought<br />to lasting <em>impact.</em></h2>
+      </div>
+      <div class="shell capability-grid">
+        <article><span>01</span><h3>Discover</h3><p>Align the product vision, user need, and technical path before delivery begins.</p></article>
+        <article><span>02</span><h3>Design</h3><p>Turn complexity into a clear experience and a maintainable product architecture.</p></article>
+        <article><span>03</span><h3>Engineer</h3><p>Build secure, dependable software with a focused team and disciplined execution.</p></article>
+        <article><span>04</span><h3>Scale</h3><p>Improve, extend, and support the system as your organization and market evolve.</p></article>
+      </div>
+    </section>
+
+    <section class="closing-section" id="contact">
+      <div class="shell closing-grid">
+        <p class="section-label"><span>03</span> Start a conversation</p>
+        <div>
+          <h2>Let’s build what<br />comes <em>next.</em></h2>
+          <a class="closing-link" href="mailto:hello@arnology.am">hello@arnology.am <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="compare-chip" href="../compare/" aria-label="Compare hero versions">Compare versions <span>↗</span></a>
+  <script src="./script.js"></script>
+</body>
+</html>

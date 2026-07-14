@@ -1,34 +1,16 @@
-# Arnology Product Core Hero
+# Arnology Hero Comparison
 
-A full-width, scroll-driven Three.js hero concept for Arnology.
+Static Vercel-ready project that preserves the current Product Core at the root URL and adds the refined video concept as a separate route.
 
-## Concept
+- `/` — unchanged build of the currently deployed Three.js Product Core.
+- `/video/` — refined cinematic workspace hero using the generated video.
+- `/compare/` — comparison landing page linking to both.
+- `/product-core/` — optional alias back to the original root version.
 
-A near-realistic glass-and-metal **Product Core** assembles as the visitor scrolls:
+## Vercel
 
-1. Idea — the core and Arnology monogram appear.
-2. Structure — architecture layers and traces align.
-3. Engineering — machined frame, internal layers, and rear mechanism assemble.
-4. Scale — service cartridges connect and the complete system expands.
+- Framework preset: Other
+- Build command: leave empty
+- Output directory: `.`
 
-The palette intentionally stays close to Arnology's restrained black, white, and blue visual language rather than using bright neon colors.
-
-## Run locally
-
-```bash
-npm ci --no-audit --no-fund
-npm run dev
-```
-
-## Production build
-
-```bash
-npm run build
-```
-
-Vercel settings:
-
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Node.js: 20.x
+No npm installation is required.
