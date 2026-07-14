@@ -1,23 +1,31 @@
-# Arnology Animated Hero Concept
+# Arnology Cinematic Hero
 
-A zero-dependency animated hero prototype built with semantic HTML, CSS, SVG and a tiny amount of JavaScript.
+A full-width interactive 3D hero concept built with Vite and Three.js.
 
 ## Run locally
 
-Open `index.html` directly, or run any static server from this folder, for example:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000`.
+## Production build
 
-## Animation concept
+```bash
+npm run build
+```
 
-1. The idea core ignites and emits signals.
-2. Product-design frames assemble.
-3. Engineering modules lock into a connected system.
-4. Web, mobile, cloud and systems outputs activate.
-5. Subtle continuous motion keeps the hero alive.
+Deploy the repository to Vercel with the default Vite settings.
 
-The current version intentionally excludes pointer parallax and advanced interactivity, which belongs to the later interaction stage.
+## Interaction
+
+- Move the cursor to shift the camera, lighting, and sculpture.
+- Hover the floating modules to highlight them.
+- Drag on the empty hero background to rotate the sculpture.
+- Reduced-motion preferences are respected.
+
+## Main files
+
+- `index.html` — overlay copy and navigation
+- `src/style.css` — responsive layout and interface styling
+- `src/main.js` — Three.js scene, animation, hover, drag, and parallax
