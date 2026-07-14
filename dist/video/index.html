@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050608" />
   <meta name="description" content="Arnology cinematic hero concept — ideas engineered into dependable software." />
-  <link rel="preload" href="./assets/arnology-desk-motion.mp4" as="video" type="video/mp4" />
-  <link rel="preload" href="./assets/arnology-desk-poster.jpg" as="image" />
+  <link rel="preload" href="../assets/arnology-desk-motion-pfrCBvr_.mp4" as="video" type="video/mp4" />
+  <link rel="preload" href="../assets/arnology-desk-poster-BUDy3wTK.jpg" as="image" />
   <title>Arnology — Cinematic Workspace</title>
   <style>
     html,body{margin:0;background:#050608;color:#f5f7fb}html.is-loading body{overflow:hidden}
@@ -16,7 +16,9 @@
     html.is-ready #loader{opacity:0;visibility:hidden}
     @keyframes loadline{0%,100%{transform:scaleX(.15);opacity:.3}50%{transform:scaleX(1);opacity:1}}
   </style>
-  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" crossorigin src="../assets/video-CrLrHyQB.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill-Dezn_h7o.js">
+  <link rel="stylesheet" crossorigin href="../assets/video-DM7iIJhX.css">
 </head>
 <body>
   <div id="loader" aria-hidden="true"></div>
@@ -24,8 +26,8 @@
   <main class="page-shell">
     <section class="hero" id="hero" aria-label="Arnology cinematic workspace hero">
       <div class="media-layer" aria-hidden="true">
-        <video id="heroVideo" class="hero-video" muted autoplay playsinline preload="auto" poster="./assets/arnology-desk-poster.jpg">
-          <source src="./assets/arnology-desk-motion.mp4" type="video/mp4" />
+        <video id="heroVideo" class="hero-video" muted autoplay playsinline preload="auto" poster="../assets/arnology-desk-poster-BUDy3wTK.jpg">
+          <source src="../assets/arnology-desk-motion-pfrCBvr_.mp4" type="video/mp4" />
         </video>
         <div class="video-grade"></div>
         <div class="pointer-light"></div>
@@ -107,6 +109,5 @@
   </main>
 
   <a class="compare-chip" href="../compare/" aria-label="Compare hero versions">Compare versions <span>↗</span></a>
-  <script type="module" src="./script.js"></script>
 </body>
 </html>

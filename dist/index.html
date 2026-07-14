@@ -3,42 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Arnology immersive product-engineering hero concept." />
-    <meta name="theme-color" content="#000000" />
-    <title>Arnology — Thinkable is the new Possible</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <style>
-      html,body{margin:0;background:#000;color:#fff;min-height:100%;overflow-x:hidden}
-      body:not(.is-ready) main,body:not(.is-ready) .after-hero{visibility:hidden}
-      .scene-loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#000;color:#fff;transition:opacity .7s ease,visibility .7s ease}
-      .scene-loader__mark{width:54px;height:54px;border:1px solid rgba(255,255,255,.28);border-radius:50%;position:relative;animation:loader-spin 2.6s linear infinite}
-      .scene-loader__mark:before{content:"";position:absolute;inset:9px;border:1px solid #343755;border-radius:50%}
-      .scene-loader__mark:after{content:"A";position:absolute;inset:0;display:grid;place-items:center;font:700 12px Arial,sans-serif;letter-spacing:.12em}
-      body.is-ready .scene-loader{opacity:0;visibility:hidden;pointer-events:none}
-      @keyframes loader-spin{to{transform:rotate(360deg)}}
-    </style>
-    <script type="module" crossorigin src="./assets/index-BXSohLQn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CTq-85ow.css">
+    <meta name="description" content="Arnology interactive product engineering hero concept." />
+    <meta name="theme-color" content="#08090c" />
+    <title>Arnology — Product Core</title>
+    <link rel="icon" href="./assets/favicon-BP-90sTy.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/main-CzxxEIoN.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-Ceb3pumC.css">
   </head>
   <body>
-    <div class="scene-loader" aria-label="Loading Arnology experience"><div class="scene-loader__mark"></div></div>
-
     <main class="experience" id="top">
       <div class="sticky-hero">
         <div class="scene-wrap" aria-hidden="true">
           <canvas id="scene"></canvas>
-          <div class="aurora-wash"></div>
           <div class="scene-shade"></div>
           <div class="scene-grain"></div>
         </div>
 
-        <header class="site-header">
+        <header class="site-header shell">
           <a class="brand" href="#top" aria-label="Arnology home">
             <svg class="brand-symbol" viewBox="0 0 38 34" aria-hidden="true">
               <path d="M4 29 17.2 4.8c.7-1.3 2.6-1.3 3.3 0L34 29h-7.1l-2.6-5.1H13.1L10.5 29H4Zm11.8-10.2h5.8l-2.9-5.7-2.9 5.7Z"/>
               <path class="brand-accent" d="m23.8 9.8 8.5 15.4h-6.8L20.4 16l3.4-6.2Z"/>
             </svg>
-            <span>ARNOLOGY</span>
+            <span>Arnology</span>
           </a>
 
           <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -46,40 +34,41 @@
           </button>
 
           <nav class="nav" aria-label="Primary navigation">
-            <a class="ghost-nav" href="#work">Work</a>
-            <span class="nav-dot" aria-hidden="true">·</span>
-            <a class="ghost-nav" href="#contact">Contact</a>
-            <a class="nav-cta" href="#contact">Start a project <span>↗</span></a>
+            <a href="#services">Services</a>
+            <a href="#work">Works</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a class="nav-cta" href="#contact">Get an estimate <span>↗</span></a>
           </nav>
         </header>
 
-        <div class="copy-layer" aria-live="polite">
+        <div class="copy-layer shell" aria-live="polite">
           <article class="scene-copy scene-copy--0 is-active" data-copy="0">
             <p class="eyebrow"><span>01</span> THINKABLE IS THE NEW POSSIBLE</p>
-            <h1>Ideas become<br />something <em>real.</em></h1>
-            <p class="intro">Arnology turns ambitious thinking into dependable digital products through discovery, design, engineering, and long-term technology partnership.</p>
+            <h1>Ideas, engineered<br />into something <em>real.</em></h1>
+            <p class="intro">We shape ambitious ideas into dependable digital products through discovery, product design, engineering, and long-term technology partnership.</p>
             <div class="actions">
               <a class="button button-primary" href="#contact">Start your project <i>↗</i></a>
-              <a class="button button-ghost" href="#work">View selected work</a>
+              <a class="button button-secondary" href="#work">Explore our work <i>→</i></a>
             </div>
           </article>
 
           <article class="scene-copy scene-copy--1" data-copy="1">
             <p class="eyebrow"><span>02</span> DISCOVERY & PRODUCT DESIGN</p>
             <h2>Give the idea<br />a clear <em>structure.</em></h2>
-            <p class="intro">Research, product strategy, experience design, and architecture converge before production begins.</p>
+            <p class="intro">Research, product strategy, UX, and architecture align around one purpose before the first production layer is locked in.</p>
           </article>
 
           <article class="scene-copy scene-copy--2" data-copy="2">
             <p class="eyebrow"><span>03</span> SOFTWARE ENGINEERING</p>
-            <h2>Build with<br />precision and <em>care.</em></h2>
-            <p class="intro">Focused engineering teams assemble secure, maintainable software layer by layer.</p>
+            <h2>Build it with<br />precision and <em>care.</em></h2>
+            <p class="intro">A focused team turns the blueprint into secure, maintainable software—layer by layer, test by test, release by release.</p>
           </article>
 
           <article class="scene-copy scene-copy--3" data-copy="3">
             <p class="eyebrow"><span>04</span> DIGITAL TRANSFORMATION</p>
-            <h2>Designed to move<br />beyond the <em>launch.</em></h2>
-            <p class="intro">Scalable foundations, transferable knowledge, and continuous improvement keep the product evolving with the business.</p>
+            <h2>Ready to grow<br />beyond the <em>launch.</em></h2>
+            <p class="intro">Scalable foundations, transferable knowledge, and continuous improvement keep the product moving as your business evolves.</p>
             <div class="actions">
               <a class="button button-primary" href="#contact">Build with Arnology <i>↗</i></a>
             </div>
@@ -96,8 +85,8 @@
           </ol>
         </aside>
 
-        <div class="hero-footer">
-          <div class="scroll-cue"><span></span> Scroll to shape the system</div>
+        <div class="hero-footer shell">
+          <div class="scroll-cue"><span></span> Scroll to build the product</div>
           <div class="system-state"><i></i><span id="system-state">IDEA CORE ACTIVE</span></div>
         </div>
 
@@ -109,19 +98,11 @@
       </div>
     </main>
 
-    <section class="after-hero" id="work">
-      <div class="after-grid">
-        <p>SELECTED CAPABILITIES</p>
-        <h2>Product discovery, custom software, team augmentation, and digital transformation—designed as one connected system.</h2>
+    <section class="after-hero" id="services">
+      <div class="shell after-grid">
+        <p>Prototype concept</p>
+        <h2>A physical metaphor for Arnology’s process: an idea becomes a carefully engineered product, then a scalable system.</h2>
       </div>
-    </section>
-
-    <section class="contact-panel" id="contact">
-      <div>
-        <p>HAVE SOMETHING THINKABLE?</p>
-        <h2>Let’s make it possible.</h2>
-      </div>
-      <a class="button button-primary" href="mailto:hello@arnology.am">hello@arnology.am <i>↗</i></a>
     </section>
 
   </body>

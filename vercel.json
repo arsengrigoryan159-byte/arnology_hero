@@ -2,8 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/video", "destination": "/video/index.html" },
-    { "source": "/compare", "destination": "/compare/index.html" },
     { "source": "/product-core", "destination": "/index.html" }
   ]
 }
