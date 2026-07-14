@@ -1,12 +1,21 @@
-# Arnology Cinematic Hero — Fixed Package
+# Arnology Product Core Hero
 
-This version removes the internal package-registry URLs from `package-lock.json`, pins Vercel to Node 20.x, and includes a public npm registry configuration.
+A full-width, scroll-driven Three.js hero concept for Arnology.
 
-## Clean local install
+## Concept
+
+A near-realistic glass-and-metal **Product Core** assembles as the visitor scrolls:
+
+1. Idea — the core and Arnology monogram appear.
+2. Structure — architecture layers and traces align.
+3. Engineering — machined frame, internal layers, and rear mechanism assemble.
+4. Scale — service cartridges connect and the complete system expands.
+
+The palette intentionally stays close to Arnology's restrained black, white, and blue visual language rather than using bright neon colors.
+
+## Run locally
 
 ```bash
-rm -rf node_modules
-npm cache verify
 npm ci --no-audit --no-fund
 npm run dev
 ```
@@ -17,11 +26,9 @@ npm run dev
 npm run build
 ```
 
-## Vercel
+Vercel settings:
 
 - Framework preset: Vite
-- Node.js version: 20.x
-- Install command: default
 - Build command: `npm run build`
 - Output directory: `dist`
-- Redeploy once with build cache cleared after pushing these files.
+- Node.js: 20.x

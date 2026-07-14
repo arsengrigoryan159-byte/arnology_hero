@@ -3,75 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Arnology cinematic interactive hero concept." />
-    <meta name="theme-color" content="#05060b" />
-    <title>Arnology — Cinematic Hero Concept</title>
+    <meta name="description" content="Arnology interactive product engineering hero concept." />
+    <meta name="theme-color" content="#08090c" />
+    <title>Arnology — Product Core</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <main class="hero" id="top">
-      <div class="scene-wrap" aria-hidden="true">
-        <canvas id="scene"></canvas>
-        <div class="scene-vignette"></div>
-        <div class="scene-grain"></div>
-      </div>
-
-      <header class="site-header shell">
-        <a class="brand" href="#top" aria-label="Arnology home">
-          <svg class="brand-symbol" viewBox="0 0 38 34" aria-hidden="true">
-            <path d="M4 29 17.2 4.8c.7-1.3 2.6-1.3 3.3 0L34 29h-7.1l-2.6-5.1H13.1L10.5 29H4Zm11.8-10.2h5.8l-2.9-5.7-2.9 5.7Z"/>
-            <path class="brand-accent" d="m23.8 9.8 8.5 15.4h-6.8L20.4 16l3.4-6.2Z"/>
-          </svg>
-          <span>Arnology</span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span><span></span>
-        </button>
-
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Works</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a class="nav-cta" href="#contact">Get an estimate <span>↗</span></a>
-        </nav>
-      </header>
-
-      <section class="hero-content shell">
-        <div class="hero-copy">
-          <p class="eyebrow reveal reveal-1"><span></span> THINKABLE IS THE NEW POSSIBLE</p>
-          <h1 class="reveal reveal-2">Ideas engineered<br />into <em>momentum.</em></h1>
-          <p class="intro reveal reveal-3">We turn ambitious product ideas into scalable software through discovery, engineering, team augmentation, and long-term technology partnership.</p>
-
-          <div class="actions reveal reveal-4">
-            <a class="button button-primary" href="#contact"><span>Start your project</span><i>↗</i></a>
-            <a class="button button-secondary" href="#work"><span>Explore our work</span><i>→</i></a>
-          </div>
-
-          <div class="service-strip reveal reveal-5" id="services">
-            <span>Custom software</span><i></i>
-            <span>Team augmentation</span><i></i>
-            <span>Digital transformation</span>
-          </div>
+    <main class="experience" id="top">
+      <div class="sticky-hero">
+        <div class="scene-wrap" aria-hidden="true">
+          <canvas id="scene"></canvas>
+          <div class="scene-shade"></div>
+          <div class="scene-grain"></div>
         </div>
 
-        <aside class="object-status reveal reveal-6" aria-live="polite">
-          <span class="status-index">01</span>
-          <div>
-            <small>ACTIVE MODULE</small>
-            <strong id="active-module">PRODUCT ENGINEERING</strong>
-          </div>
-        </aside>
-      </section>
+        <header class="site-header shell">
+          <a class="brand" href="#top" aria-label="Arnology home">
+            <svg class="brand-symbol" viewBox="0 0 38 34" aria-hidden="true">
+              <path d="M4 29 17.2 4.8c.7-1.3 2.6-1.3 3.3 0L34 29h-7.1l-2.6-5.1H13.1L10.5 29H4Zm11.8-10.2h5.8l-2.9-5.7-2.9 5.7Z"/>
+              <path class="brand-accent" d="m23.8 9.8 8.5 15.4h-6.8L20.4 16l3.4-6.2Z"/>
+            </svg>
+            <span>Arnology</span>
+          </a>
 
-      <div class="hero-footer shell">
-        <div class="scroll-cue"><span></span> Move your cursor to explore</div>
-        <div class="system-state"><i></i> SYSTEM ONLINE</div>
+          <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="#services">Services</a>
+            <a href="#work">Works</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a class="nav-cta" href="#contact">Get an estimate <span>↗</span></a>
+          </nav>
+        </header>
+
+        <div class="copy-layer shell" aria-live="polite">
+          <article class="scene-copy scene-copy--0 is-active" data-copy="0">
+            <p class="eyebrow"><span>01</span> THINKABLE IS THE NEW POSSIBLE</p>
+            <h1>Ideas, engineered<br />into something <em>real.</em></h1>
+            <p class="intro">We shape ambitious ideas into dependable digital products through discovery, product design, engineering, and long-term technology partnership.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#contact">Start your project <i>↗</i></a>
+              <a class="button button-secondary" href="#work">Explore our work <i>→</i></a>
+            </div>
+          </article>
+
+          <article class="scene-copy scene-copy--1" data-copy="1">
+            <p class="eyebrow"><span>02</span> DISCOVERY & PRODUCT DESIGN</p>
+            <h2>Give the idea<br />a clear <em>structure.</em></h2>
+            <p class="intro">Research, product strategy, UX, and architecture align around one purpose before the first production layer is locked in.</p>
+          </article>
+
+          <article class="scene-copy scene-copy--2" data-copy="2">
+            <p class="eyebrow"><span>03</span> SOFTWARE ENGINEERING</p>
+            <h2>Build it with<br />precision and <em>care.</em></h2>
+            <p class="intro">A focused team turns the blueprint into secure, maintainable software—layer by layer, test by test, release by release.</p>
+          </article>
+
+          <article class="scene-copy scene-copy--3" data-copy="3">
+            <p class="eyebrow"><span>04</span> DIGITAL TRANSFORMATION</p>
+            <h2>Ready to grow<br />beyond the <em>launch.</em></h2>
+            <p class="intro">Scalable foundations, transferable knowledge, and continuous improvement keep the product moving as your business evolves.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#contact">Build with Arnology <i>↗</i></a>
+            </div>
+          </article>
+        </div>
+
+        <aside class="stage-meter" aria-hidden="true">
+          <div class="meter-line"><span id="meter-fill"></span></div>
+          <ol>
+            <li class="is-active" data-meter="0"><span>01</span> Idea</li>
+            <li data-meter="1"><span>02</span> Structure</li>
+            <li data-meter="2"><span>03</span> Engineering</li>
+            <li data-meter="3"><span>04</span> Scale</li>
+          </ol>
+        </aside>
+
+        <div class="hero-footer shell">
+          <div class="scroll-cue"><span></span> Scroll to build the product</div>
+          <div class="system-state"><i></i><span id="system-state">IDEA CORE ACTIVE</span></div>
+        </div>
+
+        <div class="cursor-orbit" aria-hidden="true"><span></span></div>
       </div>
 
-      <div class="cursor-orbit" aria-hidden="true"><span></span></div>
+      <div class="scroll-spacer" aria-hidden="true">
+        <section></section><section></section><section></section><section></section>
+      </div>
     </main>
+
+    <section class="after-hero" id="services">
+      <div class="shell after-grid">
+        <p>Prototype concept</p>
+        <h2>A physical metaphor for Arnology’s process: an idea becomes a carefully engineered product, then a scalable system.</h2>
+      </div>
+    </section>
 
     <script type="module" src="/src/main.js"></script>
   </body>
