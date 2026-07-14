@@ -1,11 +1,13 @@
-# Arnology Cinematic Hero
+# Arnology Cinematic Hero — Fixed Package
 
-A full-width interactive 3D hero concept built with Vite and Three.js.
+This version removes the internal package-registry URLs from `package-lock.json`, pins Vercel to Node 20.x, and includes a public npm registry configuration.
 
-## Run locally
+## Clean local install
 
 ```bash
-npm install
+rm -rf node_modules
+npm cache verify
+npm ci --no-audit --no-fund
 npm run dev
 ```
 
@@ -15,17 +17,11 @@ npm run dev
 npm run build
 ```
 
-Deploy the repository to Vercel with the default Vite settings.
+## Vercel
 
-## Interaction
-
-- Move the cursor to shift the camera, lighting, and sculpture.
-- Hover the floating modules to highlight them.
-- Drag on the empty hero background to rotate the sculpture.
-- Reduced-motion preferences are respected.
-
-## Main files
-
-- `index.html` — overlay copy and navigation
-- `src/style.css` — responsive layout and interface styling
-- `src/main.js` — Three.js scene, animation, hover, drag, and parallax
+- Framework preset: Vite
+- Node.js version: 20.x
+- Install command: default
+- Build command: `npm run build`
+- Output directory: `dist`
+- Redeploy once with build cache cleared after pushing these files.
