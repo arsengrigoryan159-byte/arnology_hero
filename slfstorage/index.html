@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SlfStrg gives self-storage operators one connected workspace for facilities, inventory, tenant workflows, card payments, documents, websites, and staff access."
+    />
+    <meta name="theme-color" content="#f8fafc" />
+    <title>SlfStrg — Connected self-storage operations</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#platform" aria-label="SlfStrg home">
+          <img src="../brand/slfstrg-logo.svg" width="140" height="29" alt="SlfStrg" />
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-panel" id="primary-navigation" data-nav-panel>
+          <nav class="primary-nav" aria-label="Primary navigation">
+            <a href="#platform">Platform</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <div class="header-actions">
+            <a
+              class="button button-quiet is-disabled"
+              data-external="app"
+              aria-disabled="true"
+              tabindex="-1"
+              title="Sign in URL is not configured"
+            >Sign in</a>
+            <a
+              class="button button-primary button-small"
+              href="./book-demo/"
+            >Book a demo <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="platform" aria-labelledby="hero-title" data-hero>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> SELF-STORAGE OPERATIONS, CONNECTED</p>
+            <h1 id="hero-title">Run every storage operation from one connected workspace.</h1>
+            <p class="hero-intro">
+              Bring facilities, inventory, tenant workflows, card payments, and documents into one clear operating flow.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary button-large"
+                href="./book-demo/"
+              >Book a demo <span aria-hidden="true">↗</span></a>
+              <a
+                class="button button-secondary button-large is-disabled"
+                data-external="app"
+                aria-disabled="true"
+                tabindex="-1"
+                title="Sign in URL is not configured"
+              >Sign in <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="config-note" data-config-note>
+              The sign-in destination is awaiting configuration.
+            </p>
+
+            <div class="hero-summary" aria-label="Platform scope">
+              <div class="summary-icons" aria-hidden="true">
+                <span><svg><use href="#icon-building"></use></svg></span>
+                <span><svg><use href="#icon-box"></use></svg></span>
+                <span><svg><use href="#icon-card"></use></svg></span>
+              </div>
+              <p><strong>One operating flow</strong><br />Facilities to signed agreements</p>
+            </div>
+          </div>
+
+          <div class="hero-product-wrap">
+            <div class="preview-label"><span></span> Illustrative product preview</div>
+            <div
+              class="product-preview"
+              tabindex="0"
+              aria-label="Illustrative reservation workflow. Hover or focus to pause the animation."
+              data-preview
+              data-stage="5"
+            >
+              <div class="preview-orbit preview-orbit-one" aria-hidden="true"></div>
+              <div class="preview-orbit preview-orbit-two" aria-hidden="true"></div>
+
+              <div class="product-window">
+                <aside class="product-rail" aria-hidden="true">
+                  <span class="rail-mark">S</span>
+                  <span class="rail-icon is-active"><svg><use href="#icon-grid"></use></svg></span>
+                  <span class="rail-icon"><svg><use href="#icon-building"></use></svg></span>
+                  <span class="rail-icon"><svg><use href="#icon-users"></use></svg></span>
+                  <span class="rail-icon"><svg><use href="#icon-card"></use></svg></span>
+                  <span class="rail-icon rail-icon-last"><svg><use href="#icon-settings"></use></svg></span>
+                </aside>
+
+                <div class="product-main">
+                  <div class="product-topbar">
+                    <div>
+                      <p class="product-kicker">Reservation workspace</p>
+                      <p class="product-title">Rental journey</p>
+                    </div>
+                    <div class="facility-switch" aria-label="Illustrative facility selector">
+                      <span class="facility-option" data-facility="a">Facility A</span>
+                      <span class="facility-option is-selected" data-facility="b">Facility B</span>
+                    </div>
+                  </div>
+
+                  <div class="workflow-track" aria-label="Lead to signed workflow">
+                    <div class="track-line"><span data-track-fill></span></div>
+                    <ol>
+                      <li class="is-complete" data-preview-step="1">
+                        <span class="step-node"><svg><use href="#icon-check"></use></svg></span>
+                        <span>Lead</span>
+                      </li>
+                      <li class="is-complete" data-preview-step="2">
+                        <span class="step-node"><svg><use href="#icon-check"></use></svg></span>
+                        <span>Reserved</span>
+                      </li>
+                      <li class="is-complete" data-preview-step="3">
+                        <span class="step-node"><svg><use href="#icon-check"></use></svg></span>
+                        <span>Verified</span>
+                      </li>
+                      <li class="is-complete" data-preview-step="4">
+                        <span class="step-node"><svg><use href="#icon-check"></use></svg></span>
+                        <span>Paid</span>
+                      </li>
+                      <li class="is-current" data-preview-step="5">
+                        <span class="step-node"><svg><use href="#icon-check"></use></svg></span>
+                        <span>Signed</span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="product-content">
+                    <article class="reservation-card ui-card">
+                      <div class="card-heading">
+                        <span class="card-icon blue"><svg><use href="#icon-file"></use></svg></span>
+                        <div>
+                          <p>Sample reservation</p>
+                          <strong>RSV-1048</strong>
+                        </div>
+                        <span class="status status-blue" data-reservation-status>Reserved</span>
+                      </div>
+                      <div class="reservation-details">
+                        <div><span>Facility</span><strong data-reservation-facility>Facility B</strong></div>
+                        <div><span>Unit</span><strong data-reservation-unit>B-214 · 10 × 10</strong></div>
+                        <div><span>Move date</span><strong>Selected</strong></div>
+                      </div>
+                      <div class="card-progress"><span></span></div>
+                      <div class="card-footer-row">
+                        <span data-workflow-copy>Workflow complete</span>
+                        <strong data-progress-copy>5 of 5</strong>
+                      </div>
+                    </article>
+
+                    <div class="supporting-grid">
+                      <article class="mini-card unit-card" data-unit-card>
+                        <div class="mini-card-top">
+                          <span class="card-icon cyan"><svg><use href="#icon-box"></use></svg></span>
+                          <span class="status status-neutral">Available</span>
+                        </div>
+                        <p>Unit inventory</p>
+                        <strong data-unit-code>B-214</strong>
+                        <span data-unit-facility>Facility B</span>
+                      </article>
+
+                      <article class="mini-card verification-card" data-state-card="verified">
+                        <div class="mini-card-top">
+                          <span class="card-icon green"><svg><use href="#icon-shield"></use></svg></span>
+                          <span class="state-dot"></span>
+                        </div>
+                        <p>Identity check</p>
+                        <strong data-verification-state>Verified</strong>
+                        <span>Verification record linked</span>
+                      </article>
+
+                      <article class="mini-card payment-card" data-state-card="paid">
+                        <div class="mini-card-top">
+                          <span class="card-icon amber"><svg><use href="#icon-card"></use></svg></span>
+                          <span class="state-dot"></span>
+                        </div>
+                        <p>Card payment</p>
+                        <strong data-payment-state>Paid</strong>
+                        <span data-invoice-state>Invoice record linked</span>
+                      </article>
+
+                      <article class="mini-card agreement-card" data-state-card="signed">
+                        <div class="mini-card-top">
+                          <span class="card-icon blue"><svg><use href="#icon-signature"></use></svg></span>
+                          <span class="state-dot"></span>
+                        </div>
+                        <p>Agreement</p>
+                        <strong data-agreement-state>Signed</strong>
+                        <span>Electronic signature tracked</span>
+                      </article>
+                    </div>
+                  </div>
+
+                  <div class="website-strip">
+                    <span class="card-icon soft"><svg><use href="#icon-globe"></use></svg></span>
+                    <div><strong>Facility website</strong><span>Brand and inventory configured for Facility B</span></div>
+                    <span class="status status-green">Connected</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspect-hint">
+                <span data-motion-indicator></span>
+                <strong data-motion-label>Workflow complete</strong>
+                <em>Hover or focus to inspect</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-strip" aria-label="Platform scope overview">
+        <div class="shell story-strip-inner">
+          <p>From company setup to the rental journey</p>
+          <ul>
+            <li><span>01</span> Facilities</li>
+            <li><span>02</span> Inventory</li>
+            <li><span>03</span> Customers</li>
+            <li><span>04</span> Billing</li>
+            <li><span>05</span> Documents</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <p class="section-label">A CONNECTED RENTAL JOURNEY</p>
+            <h2 id="workflow-title">From first lead to signed agreement</h2>
+            <p>
+              Coordinate the customer journey while keeping each operational step connected to the same rental.
+            </p>
+          </div>
+
+          <ol class="journey" aria-label="Rental journey steps">
+            <li class="journey-card reveal">
+              <div class="journey-number"><span>01</span><svg><use href="#icon-user-plus"></use></svg></div>
+              <div><h3>Lead</h3><p>Keep account, contact, and facility details together as a new lead takes shape.</p></div>
+              <span class="journey-arrow" aria-hidden="true">→</span>
+            </li>
+            <li class="journey-card reveal">
+              <div class="journey-number"><span>02</span><svg><use href="#icon-calendar"></use></svg></div>
+              <div><h3>Reserved</h3><p>Coordinate move dates, the selected unit or package, and stored-item details.</p></div>
+              <span class="journey-arrow" aria-hidden="true">→</span>
+            </li>
+            <li class="journey-card reveal">
+              <div class="journey-number"><span>03</span><svg><use href="#icon-shield"></use></svg></div>
+              <div><h3>Verified</h3><p>Support manual and linked identity-verification steps within the rental journey.</p></div>
+              <span class="journey-arrow" aria-hidden="true">→</span>
+            </li>
+            <li class="journey-card reveal">
+              <div class="journey-number"><span>04</span><svg><use href="#icon-card"></use></svg></div>
+              <div><h3>Paid</h3><p>Complete card payment and keep the invoice record connected to the rental.</p></div>
+              <span class="journey-arrow" aria-hidden="true">→</span>
+            </li>
+            <li class="journey-card reveal">
+              <div class="journey-number"><span>05</span><svg><use href="#icon-signature"></use></svg></div>
+              <div><h3>Signed</h3><p>Send an electronic agreement and track its signature status alongside the account.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section capabilities-section" id="capabilities" aria-labelledby="capabilities-title">
+        <div class="shell">
+          <div class="section-heading split reveal">
+            <div>
+              <p class="section-label">BUILT AROUND DAILY OPERATIONS</p>
+              <h2 id="capabilities-title">The operational pieces, connected</h2>
+            </div>
+            <p>
+              Bring the working parts of a self-storage operation into one system, organized around facilities and the rental journey.
+            </p>
+          </div>
+
+          <div class="capability-grid">
+            <article class="capability-card capability-card-wide reveal">
+              <div class="capability-icon"><svg><use href="#icon-building"></use></svg></div>
+              <span class="capability-index">01</span>
+              <h3>Facilities and inventory</h3>
+              <p>Organize facility details, units, sizes, packages, merchandise, and rentable availability by facility.</p>
+              <div class="inventory-visual" aria-hidden="true">
+                <div class="inventory-row inventory-head"><span>Unit</span><span>Size</span><span>Status</span></div>
+                <div class="inventory-row"><strong>A-108</strong><span>5 × 10</span><i>Available</i></div>
+                <div class="inventory-row"><strong>B-214</strong><span>10 × 10</span><i>Available</i></div>
+              </div>
+            </article>
+
+            <article class="capability-card reveal">
+              <div class="capability-icon"><svg><use href="#icon-sliders"></use></svg></div>
+              <span class="capability-index">02</span>
+              <h3>Pricing and insurance</h3>
+              <p>Configure pricing groups, fees, taxes, and insurance settings that support a rental.</p>
+              <div class="rule-tags" aria-hidden="true"><span>Base price</span><span>Fees</span><span>Tax</span><span>Insurance</span></div>
+            </article>
+
+            <article class="capability-card reveal">
+              <div class="capability-icon"><svg><use href="#icon-users"></use></svg></div>
+              <span class="capability-index">03</span>
+              <h3>Tenants and rentals</h3>
+              <p>Connect lead, tenant, reservation, rental, contact, and stored-property details.</p>
+              <div class="mini-flow" aria-hidden="true"><span>Lead</span><i></i><span>Tenant</span><i></i><span>Rental</span></div>
+            </article>
+
+            <article class="capability-card reveal">
+              <div class="capability-icon"><svg><use href="#icon-card"></use></svg></div>
+              <span class="capability-index">04</span>
+              <h3>Cards and billing records</h3>
+              <p>Support card payments and keep invoices, refunds, dues, and transaction records connected.</p>
+              <div class="billing-visual" aria-hidden="true"><span><svg><use href="#icon-card"></use></svg></span><div><small>Invoice status</small><strong>Payment recorded</strong></div><i>Paid</i></div>
+            </article>
+
+            <article class="capability-card capability-card-tall reveal">
+              <div class="capability-icon"><svg><use href="#icon-shield"></use></svg></div>
+              <span class="capability-index">05</span>
+              <h3>Verification and documents</h3>
+              <p>Support identity-verification and electronic-signature workflows, with links sent by email or SMS.</p>
+              <div class="document-visual" aria-hidden="true">
+                <div class="document-page"><span></span><span></span><span></span><i>Signed</i></div>
+                <div class="document-badge"><svg><use href="#icon-check"></use></svg></div>
+              </div>
+            </article>
+
+            <article class="capability-card reveal">
+              <div class="capability-icon"><svg><use href="#icon-lock"></use></svg></div>
+              <span class="capability-index">06</span>
+              <h3>Staff and permissions</h3>
+              <p>Give team members access based on their responsibilities and assigned facilities.</p>
+              <div class="avatar-stack" aria-hidden="true"><span>OP</span><span>FM</span><span>AD</span><i>Facility access</i></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scale-section" aria-labelledby="scale-title">
+        <div class="scale-grid" aria-hidden="true"></div>
+        <div class="shell scale-layout">
+          <div class="scale-copy reveal">
+            <p class="section-label light">ONE SYSTEM, FACILITY BY FACILITY</p>
+            <h2 id="scale-title">Keep every facility aligned without flattening the details.</h2>
+            <p>
+              Organize branding, inventory, pricing settings, and staff access by facility—then connect customer-facing websites to selected facilities and configured inventory.
+            </p>
+            <ul class="check-list">
+              <li><svg><use href="#icon-check"></use></svg> Single- and multi-facility organization</li>
+              <li><svg><use href="#icon-check"></use></svg> Facility-scoped inventory and commercial rules</li>
+              <li><svg><use href="#icon-check"></use></svg> Configurable websites and custom-domain workflows</li>
+            </ul>
+          </div>
+
+          <div class="facility-console reveal" aria-label="Illustrative multi-facility interface">
+            <div class="console-top">
+              <div><span class="live-dot"></span><span>Illustrative facility view</span></div>
+              <span>Company workspace</span>
+            </div>
+            <div class="console-body">
+              <div class="facility-list">
+                <article>
+                  <span class="facility-letter">A</span>
+                  <div><strong>Facility A</strong><small>Operations configured</small></div>
+                  <span class="status status-green">Active</span>
+                </article>
+                <article class="is-selected">
+                  <span class="facility-letter">B</span>
+                  <div><strong>Facility B</strong><small>Website connected</small></div>
+                  <span class="status status-blue">Selected</span>
+                </article>
+                <article>
+                  <span class="facility-letter">C</span>
+                  <div><strong>Facility C</strong><small>Settings in progress</small></div>
+                  <span class="status status-warning">Setup</span>
+                </article>
+              </div>
+              <div class="facility-detail">
+                <div class="detail-heading"><div><small>Selected facility</small><strong>Facility B</strong></div><span><svg><use href="#icon-building"></use></svg></span></div>
+                <div class="detail-grid">
+                  <div><svg><use href="#icon-box"></use></svg><span>Inventory</span><strong>Configured</strong></div>
+                  <div><svg><use href="#icon-sliders"></use></svg><span>Pricing</span><strong>Assigned</strong></div>
+                  <div><svg><use href="#icon-users"></use></svg><span>Staff</span><strong>Scoped</strong></div>
+                  <div><svg><use href="#icon-globe"></use></svg><span>Website</span><strong>Connected</strong></div>
+                </div>
+                <div class="domain-row"><span class="domain-icon">www</span><div><small>Custom-domain workflow</small><strong>Domain settings available</strong></div><svg><use href="#icon-arrow-up-right"></use></svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof-section" aria-labelledby="proof-title">
+        <div class="shell proof-layout">
+          <div class="section-heading centered reveal">
+            <p class="section-label">ILLUSTRATIVE PRODUCT FLOW</p>
+            <h2 id="proof-title">One rental, with the working records connected</h2>
+            <p>No fabricated metrics—just an interface-derived view of the operational journey SlfStrg supports.</p>
+          </div>
+
+          <div class="proof-board reveal" aria-label="Illustrative connected rental record">
+            <div class="proof-board-label"><span></span> Sample data · interface preview</div>
+            <div class="proof-origin">
+              <div class="proof-origin-top"><span class="card-icon blue"><svg><use href="#icon-file"></use></svg></span><span class="status status-blue">Reserved</span></div>
+              <p>Sample rental</p>
+              <strong>RSV-1048</strong>
+              <small>Facility B · Unit B-214</small>
+            </div>
+            <div class="proof-connectors" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="proof-items">
+              <article><span class="card-icon cyan"><svg><use href="#icon-box"></use></svg></span><div><small>Inventory</small><strong>Unit linked</strong></div><i></i></article>
+              <article><span class="card-icon green"><svg><use href="#icon-shield"></use></svg></span><div><small>Verification</small><strong>Record linked</strong></div><i></i></article>
+              <article><span class="card-icon amber"><svg><use href="#icon-card"></use></svg></span><div><small>Billing</small><strong>Invoice linked</strong></div><i></i></article>
+              <article><span class="card-icon blue"><svg><use href="#icon-signature"></use></svg></span><div><small>Agreement</small><strong>Signature tracked</strong></div><i></i></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="shell faq-layout">
+          <div class="faq-intro reveal">
+            <p class="section-label">FREQUENTLY ASKED QUESTIONS</p>
+            <h2 id="faq-title">A clearer view of SlfStrg</h2>
+            <p>What operators need to know about the platform and how it fits their work.</p>
+          </div>
+
+          <div class="faq-list reveal">
+            <details open>
+              <summary><span>Who is SlfStrg for?</span><i aria-hidden="true"></i></summary>
+              <p>SlfStrg is built for self-storage owners, operators, operations leads, facility managers, and administrative teams.</p>
+            </details>
+            <details>
+              <summary><span>Can it support more than one facility?</span><i aria-hidden="true"></i></summary>
+              <p>Yes. SlfStrg supports single- and multi-facility organization, including facility-scoped inventory, pricing settings, websites, users, and permissions.</p>
+            </details>
+            <details>
+              <summary><span>Which parts of the rental journey can be managed?</span><i aria-hidden="true"></i></summary>
+              <p>SlfStrg connects leads, tenant and reservation details, move dates, units, stored items, identity-verification steps, card payments, invoices, and electronic agreements.</p>
+            </details>
+            <details>
+              <summary><span>Can operator websites be configured by facility?</span><i aria-hidden="true"></i></summary>
+              <p>Yes. Customer-facing websites can be configured around selected facilities, including branding, domains, and configured inventory.</p>
+            </details>
+            <details>
+              <summary><span>How can I evaluate SlfStrg?</span><i aria-hidden="true"></i></summary>
+              <p>Book a demo to see how SlfStrg fits your operation.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title">
+        <div class="cta-grid" aria-hidden="true"></div>
+        <div class="shell final-cta-inner reveal">
+          <div class="cta-icon" aria-hidden="true"><svg><use href="#icon-building"></use></svg></div>
+          <p class="section-label light">BRING THE JOURNEY TOGETHER</p>
+          <h2 id="cta-title">See how SlfStrg fits your operation.</h2>
+          <p>Explore one connected workspace for the operational pieces behind a self-storage rental.</p>
+          <div class="final-actions">
+            <a
+              class="button button-light button-large"
+              href="./book-demo/"
+            >Book a demo <span aria-hidden="true">↗</span></a>
+            <a
+              class="button button-outline-light button-large is-disabled"
+              data-external="app"
+              aria-disabled="true"
+              tabindex="-1"
+              title="Sign in URL is not configured"
+            >Sign in <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="cta-config-note" data-config-note>The sign-in destination is awaiting configuration.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand" href="#platform" aria-label="SlfStrg home">
+          <img src="../brand/slfstrg-logo.svg" width="140" height="29" alt="SlfStrg" loading="lazy" />
+        </a>
+        <nav aria-label="Footer navigation">
+          <a href="#platform">Platform</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <p>Connected operations for self-storage teams.</p>
+      </div>
+    </footer>
+
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+      <symbol id="icon-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16M17 9h2a2 2 0 0 1 2 2v10M2 21h20M8 7h5M8 11h5M8 15h5M8 19h5"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="icon-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.08A1.7 1.7 0 0 0 9 19.37a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.63 15 1.7 1.7 0 0 0 3.08 14H3v-4h.08A1.7 1.7 0 0 0 4.63 9a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.63h.01A1.7 1.7 0 0 0 10 3.08V3h4v.08A1.7 1.7 0 0 0 15 4.63a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.37 9v.01A1.7 1.7 0 0 0 20.92 10H21v4h-.08A1.7 1.7 0 0 0 19.4 15Z"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+      <symbol id="icon-box" viewBox="0 0 24 24"><path d="m21 8-9-5-9 5 9 5 9-5Z"/><path d="m3 8 9 5 9-5M3 8v8l9 5 9-5V8M12 13v8"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="icon-signature" viewBox="0 0 24 24"><path d="M3 17c3-1 4-5 6-9 1-2 2-3 3-2s-1 5-2 7c2-2 4-4 5-3 1 1-1 3 0 4s3-2 5-2M3 20h18"/></symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+      <symbol id="icon-user-plus" viewBox="0 0 24 24"><path d="M15 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v6M22 11h-6"/></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+      <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    </svg>
+  </body>
+</html>

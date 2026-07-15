@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Request a SlfStrg demo and choose a preferred time to explore connected self-storage operations."
+    />
+    <meta name="theme-color" content="#f8fafc" />
+    <title>Book a SlfStrg demo</title>
+    <link rel="icon" href="../../assets/favicon-BP-90sTy.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="../../assets/slfstorageDemo-DfvCdQWw.js"></script>
+    <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-Dezn_h7o.js">
+    <link rel="modulepreload" crossorigin href="../../assets/config-DkoCWRuB.js">
+    <link rel="stylesheet" crossorigin href="../../assets/config-DN0EyhNt.css">
+    <link rel="stylesheet" crossorigin href="../../assets/slfstorageDemo-CJ9KhlVH.css">
+  </head>
+  <body class="scheduler-page">
+    <a class="skip-link" href="#scheduler-main">Skip to scheduler</a>
+
+    <header class="site-header scheduler-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../" aria-label="SlfStrg landing page">
+          <img src="../../brand/slfstrg-logo.svg" width="140" height="29" alt="SlfStrg" />
+        </a>
+        <div class="scheduler-header-actions">
+          <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to platform</a>
+          <a
+            class="button button-secondary is-disabled"
+            data-external="app"
+            aria-disabled="true"
+            tabindex="-1"
+            title="Sign in URL is not configured"
+          >Sign in</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="scheduler-main">
+      <section class="scheduler-hero" aria-labelledby="scheduler-title">
+        <div class="scheduler-grid" aria-hidden="true"></div>
+        <div class="scheduler-glow" aria-hidden="true"></div>
+        <div class="shell scheduler-hero-inner">
+          <p class="eyebrow"><span></span> A CLOSER LOOK AT YOUR OPERATION</p>
+          <h1 id="scheduler-title">Find a time to explore SlfStrg.</h1>
+          <p>
+            Choose a preferred 30-minute slot. The SlfStrg team will review your request and confirm the time by email.
+          </p>
+        </div>
+      </section>
+
+      <section class="scheduler-section" aria-label="Demo request scheduler">
+        <div class="shell scheduler-layout">
+          <aside class="scheduler-aside">
+            <p class="section-label">WHAT TO EXPECT</p>
+            <h2>A focused walkthrough, built around your workflow.</h2>
+            <p>
+              We’ll use the session to understand how your facilities operate and show the parts of SlfStrg that fit that journey.
+            </p>
+            <ol class="expectation-list">
+              <li><span>01</span><div><strong>Your operation</strong><small>Facilities, team responsibilities, and current workflow</small></div></li>
+              <li><span>02</span><div><strong>The rental journey</strong><small>Leads, reservations, verification, card payment, and documents</small></div></li>
+              <li><span>03</span><div><strong>Next questions</strong><small>Time to evaluate fit and discuss what matters to your team</small></div></li>
+            </ol>
+            <div class="request-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <p><strong>Preferred time, not yet confirmed</strong><span>Your selected slot is a request until the SlfStrg team confirms it by email.</span></p>
+            </div>
+          </aside>
+
+          <div class="scheduler-card">
+            <form class="demo-form" data-demo-form novalidate>
+              <div class="form-progress" aria-label="Demo request steps">
+                <span class="is-current"><i>1</i> Choose a time</span>
+                <b aria-hidden="true"></b>
+                <span><i>2</i> Your details</span>
+                <b aria-hidden="true"></b>
+                <span><i>3</i> Request</span>
+              </div>
+
+              <fieldset class="scheduler-fieldset">
+                <legend>Choose a preferred date</legend>
+                <p class="field-help">Upcoming weekdays are shown in your local time zone.</p>
+                <div class="date-options" data-date-options aria-label="Preferred demo date"></div>
+                <input type="hidden" name="date" data-date-input />
+              </fieldset>
+
+              <fieldset class="scheduler-fieldset time-fieldset">
+                <legend>Choose a preferred time</legend>
+                <div class="timezone-label">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                  <span data-timezone-label>Local time</span>
+                </div>
+                <div class="time-options" data-time-options aria-label="Preferred demo time">
+                  <button type="button" data-time="10:00" aria-pressed="false">10:00 AM</button>
+                  <button type="button" data-time="11:30" aria-pressed="false">11:30 AM</button>
+                  <button type="button" data-time="14:00" aria-pressed="false">2:00 PM</button>
+                  <button type="button" data-time="15:30" aria-pressed="false">3:30 PM</button>
+                </div>
+                <input type="hidden" name="time" data-time-input />
+                <input type="hidden" name="timezone" data-timezone-input />
+              </fieldset>
+
+              <div class="details-heading">
+                <span>YOUR DETAILS</span>
+                <h2>Tell us who will join.</h2>
+                <p>Required fields are marked with an asterisk.</p>
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  <span>Full name *</span>
+                  <input type="text" name="name" autocomplete="name" maxlength="100" required />
+                </label>
+                <label>
+                  <span>Work email *</span>
+                  <input type="email" name="email" autocomplete="email" maxlength="160" required />
+                </label>
+                <label>
+                  <span>Company *</span>
+                  <input type="text" name="company" autocomplete="organization" maxlength="120" required />
+                </label>
+                <label>
+                  <span>Your role</span>
+                  <input type="text" name="role" autocomplete="organization-title" maxlength="100" />
+                </label>
+                <label>
+                  <span>Facilities</span>
+                  <select name="facilities">
+                    <option value="">Select an option</option>
+                    <option value="1">1 facility</option>
+                    <option value="2-5">2–5 facilities</option>
+                    <option value="6-10">6–10 facilities</option>
+                    <option value="11+">11 or more facilities</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Phone</span>
+                  <input type="tel" name="phone" autocomplete="tel" maxlength="40" />
+                </label>
+                <label class="full-field">
+                  <span>What would you like to explore?</span>
+                  <textarea name="notes" rows="4" maxlength="1200" placeholder="Share any workflow questions or priorities for the session."></textarea>
+                </label>
+              </div>
+
+              <label class="honeypot" aria-hidden="true">
+                Website
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </label>
+
+              <div class="request-summary" aria-live="polite">
+                <div>
+                  <span>Preferred slot</span>
+                  <strong data-request-summary>Choose a date and time</strong>
+                </div>
+                <span class="duration-pill">30 minutes</span>
+              </div>
+
+              <div class="form-error" role="alert" data-form-error hidden></div>
+
+              <div class="form-submit-row">
+                <p>Your details are used to respond to this demo request.</p>
+                <button class="button button-primary button-large" type="submit" data-submit-button disabled>
+                  Request this time <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+
+            <section class="scheduler-success" data-success-panel hidden tabindex="-1" aria-labelledby="success-title">
+              <div class="success-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              </div>
+              <p class="section-label">REQUEST RECEIVED</p>
+              <h2 id="success-title">Your preferred time is on its way to the SlfStrg team.</h2>
+              <p data-success-copy>We’ll use the email you supplied to confirm the session.</p>
+              <div class="success-actions">
+                <a class="button button-primary button-large" href="../">Return to the platform</a>
+                <button class="button button-secondary button-large" type="button" data-new-request>Request another time</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer scheduler-footer">
+      <div class="shell footer-inner">
+        <a class="brand" href="../" aria-label="SlfStrg landing page">
+          <img src="../../brand/slfstrg-logo.svg" width="140" height="29" alt="SlfStrg" loading="lazy" />
+        </a>
+        <a class="footer-return" href="../">Return to SlfStrg <span aria-hidden="true">→</span></a>
+        <p>Connected operations for self-storage teams.</p>
+      </div>
+    </footer>
+  </body>
+</html>

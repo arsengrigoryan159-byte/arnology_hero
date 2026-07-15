@@ -1,0 +1,1 @@
+function e(e){if(typeof e!=`string`||e.trim()===``)return null;try{let t=new URL(e.trim());return t.protocol!==`https:`||!t.hostname||t.username||t.password?null:t.href}catch{return null}}var t=Object.freeze({app:e({BASE_URL:`./`,DEV:!1,MODE:`production`,PROD:!0,SSR:!1}.NEXT_PUBLIC_APP_URL)});export{t};
