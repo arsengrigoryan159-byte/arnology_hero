@@ -40,11 +40,11 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 0.94;
 renderer.shadowMap.enabled = false;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.setClearColor(0x000000, 1);
+renderer.setClearColor(0x100904, 1);
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x000000);
-scene.fog = new THREE.FogExp2(0x000000, 0.026);
+scene.background = new THREE.Color(0x100904);
+scene.fog = new THREE.FogExp2(0x100904, 0.026);
 
 const camera = new THREE.PerspectiveCamera(32, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.set(0.1, 0.15, 12.4);
@@ -60,7 +60,7 @@ composer.addPass(new RenderPass(scene, camera));
 const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.28, 0.52, 0.84);
 composer.addPass(bloom);
 
-scene.add(new THREE.HemisphereLight(0xffffff, 0x000000, 0.72));
+scene.add(new THREE.HemisphereLight(0xffedd7, 0x100904, 0.72));
 const key = new THREE.DirectionalLight(0xffffff, 3.4);
 key.position.set(4, 6, 7);
 key.castShadow = true;
@@ -70,13 +70,13 @@ key.shadow.camera.right = 8;
 key.shadow.camera.top = 8;
 key.shadow.camera.bottom = -8;
 scene.add(key);
-const fill = new THREE.PointLight(0x343755, 14, 20, 2);
+const fill = new THREE.PointLight(0xdc5000, 10, 20, 2);
 fill.position.set(-5, 2.5, 5);
 scene.add(fill);
-const edge = new THREE.PointLight(0xe7e7e7, 10, 18, 2);
+const edge = new THREE.PointLight(0xffedd7, 10, 18, 2);
 edge.position.set(5, -2.5, 3.5);
 scene.add(edge);
-const pointerLight = new THREE.PointLight(0x5f6389, 7, 14, 2);
+const pointerLight = new THREE.PointLight(0xa45a2a, 7, 14, 2);
 pointerLight.position.set(2, 2, 6);
 scene.add(pointerLight);
 
@@ -110,7 +110,7 @@ const portalDark = new THREE.MeshPhysicalMaterial({
   clearcoatRoughness: 0.14
 });
 const portalViolet = new THREE.MeshBasicMaterial({
-  color: 0x343755,
+  color: 0xdc5000,
   transparent: true,
   opacity: 0.72,
   toneMapped: false,
@@ -152,8 +152,8 @@ function makeSoftGlowTexture() {
   c.width = c.height = 512;
   const ctx = c.getContext('2d');
   const gradient = ctx.createRadialGradient(256, 256, 8, 256, 256, 250);
-  gradient.addColorStop(0, 'rgba(90,94,145,.48)');
-  gradient.addColorStop(.26, 'rgba(52,55,85,.20)');
+  gradient.addColorStop(0, 'rgba(220,80,0,.42)');
+  gradient.addColorStop(.26, 'rgba(96,48,22,.20)');
   gradient.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 512, 512);
@@ -182,7 +182,7 @@ for (let i = 0; i < starCount; i++) {
 const starsGeometry = new THREE.BufferGeometry();
 starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
 const stars = new THREE.Points(starsGeometry, new THREE.PointsMaterial({
-  color: 0xc6c6c6, size: .022, transparent: true, opacity: .42,
+  color: 0xffedd7, size: .022, transparent: true, opacity: .42,
   sizeAttenuation: true, depthWrite: false
 }));
 scene.add(stars);
@@ -199,7 +199,7 @@ for (let i = 0; i < sparkCount; i++) {
 const sparksGeometry = new THREE.BufferGeometry();
 sparksGeometry.setAttribute('position', new THREE.BufferAttribute(sparkPositions, 3));
 const sparks = new THREE.Points(sparksGeometry, new THREE.PointsMaterial({
-  color: 0x777a9f, size: .035, transparent: true, opacity: .52,
+  color: 0xdc7a3c, size: .035, transparent: true, opacity: .52,
   blending: THREE.AdditiveBlending, sizeAttenuation: true, depthWrite: false
 }));
 portal.add(sparks);
@@ -228,12 +228,12 @@ const ceramic = new THREE.MeshPhysicalMaterial({
   clearcoatRoughness: 0.11
 });
 const brandMetal = new THREE.MeshPhysicalMaterial({
-  color: 0x343755,
+  color: 0xdc5000,
   metalness: 0.74,
   roughness: 0.2,
   clearcoat: 0.95,
   clearcoatRoughness: 0.1,
-  emissive: 0x0b0c16,
+  emissive: 0x351306,
   emissiveIntensity: 0.22
 });
 const silicon = new THREE.MeshPhysicalMaterial({
@@ -245,7 +245,7 @@ const silicon = new THREE.MeshPhysicalMaterial({
   envMapIntensity: 1.2
 });
 const glass = new THREE.MeshPhysicalMaterial({
-  color: 0x343755,
+  color: 0x7a3514,
   metalness: 0,
   roughness: 0.05,
   transmission: 0.72,
@@ -257,8 +257,8 @@ const glass = new THREE.MeshPhysicalMaterial({
   ior: 1.42,
   envMapIntensity: 1.15
 });
-const glow = new THREE.MeshBasicMaterial({ color: 0x777a9f, transparent: true, opacity: 0.44, toneMapped: false });
-const lineMaterial = new THREE.MeshBasicMaterial({ color: 0x777a9f, transparent: true, opacity: 0.28, toneMapped: false });
+const glow = new THREE.MeshBasicMaterial({ color: 0xdc5000, transparent: true, opacity: 0.44, toneMapped: false });
+const lineMaterial = new THREE.MeshBasicMaterial({ color: 0xffedd7, transparent: true, opacity: 0.28, toneMapped: false });
 
 // The central object is a physical "product core": a glass idea chamber,
 // machined frame, silicon layers, and modular expansion cartridges.
@@ -374,11 +374,11 @@ function labelTexture(text) {
   c.width = 512; c.height = 170;
   const ctx = c.getContext('2d');
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.fillStyle = '#ecece7';
+  ctx.fillStyle = '#ffedd7';
   ctx.font = '600 28px Arial';
   ctx.letterSpacing = '5px';
   ctx.fillText(text, 40, 92);
-  ctx.fillStyle = '#343755';
+  ctx.fillStyle = '#dc5000';
   ctx.fillRect(40, 116, 120, 3);
   const texture = new THREE.CanvasTexture(c);
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -431,7 +431,7 @@ for (let i = 0; i < 7; i++) {
   const layer = new THREE.Mesh(
     new RoundedBoxGeometry(3.02 - i*.14, 1.95 - i*.1, .045, 6, .1),
     new THREE.MeshPhysicalMaterial({
-      color: i%2 ? 0x0d0d12 : 0x343755,
+      color: i%2 ? 0x26150b : 0x6b2b0c,
       metalness: i%2 ? .72 : .52,
       roughness: .2,
       transparent: true,

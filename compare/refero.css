@@ -1,0 +1,15 @@
+.concept-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.refero-preview{display:grid;place-items:center;background:linear-gradient(0deg,rgba(16,9,4,.55),rgba(16,9,4,.05)),url("../refero/workbench-hero.png") center/cover,#100904}
+.refero-word{position:absolute;left:18px;bottom:18px;z-index:2;font-size:clamp(28px,3.5vw,58px);font-weight:600;line-height:.8;letter-spacing:-.06em;color:#ffedd7}
+.refero-object{position:relative;width:32%;aspect-ratio:1;display:grid;place-items:center;transform:rotate(-8deg);animation:float-object 5s ease-in-out infinite;opacity:.35}
+.refero-object:before,.refero-object:after,.refero-object i{content:"";position:absolute;inset:0;border:1px solid rgba(255,237,215,.5);border-radius:24%}
+.refero-object:before{inset:-30%;border-radius:50%;border-style:dashed;animation:spin 18s linear infinite}
+.refero-object:after{inset:20%;border-radius:16%;background:rgba(56,36,22,.75);border-color:#dc5000}
+.refero-object i:nth-child(1){inset:-8%;transform:rotate(45deg);border-color:rgba(220,80,0,.65)}
+.refero-object i:nth-child(2){inset:-48%;border-radius:50%;border-color:rgba(255,237,215,.12)}
+.refero-object i:nth-child(3){width:7px;height:7px;inset:auto 0 8% auto;border:0;border-radius:50%;background:#dc5000}
+.refero-object strong{z-index:2;color:#ffedd7;font-size:clamp(35px,5vw,72px)}
+.badge-refero{background:rgba(220,80,0,.76)}
+@keyframes float-object{50%{transform:translateY(-9px) rotate(3deg)}}
+@media(max-width:1180px){.concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.concept-grid{grid-template-columns:1fr}}
